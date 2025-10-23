@@ -1,1 +1,7 @@
-{"expo":{"name":"Expense Tracker","slug":"expense-tracker","version":"1.0.0"}}
+{
+  "expo": {
+    "name": "Expense Tracker",
+    "slug": "expense-tracker",
+    "version": "1.0.0"
+  }
+}

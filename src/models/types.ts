@@ -1,1 +1,9 @@
-export type Category={id:number;name:string;color:string};export type Expense={id:number;amount:number;category_id:number;note:string;created_at:number;updated_at:number};
+export type Category = { id: number; name: string; color: string };
+export type Expense = {
+  id: number;
+  amount: number;
+  category_id: number;
+  note: string;
+  created_at: number;
+  updated_at: number;
+};

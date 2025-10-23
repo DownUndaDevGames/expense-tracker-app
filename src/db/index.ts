@@ -1,4 +1,15 @@
 import * as SQLite from 'expo-sqlite';
-const db=SQLite.openDatabase('expenses.db');
-export function init(){db.transaction(tx=>{tx.executeSql('CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, color TEXT);');tx.executeSql('CREATE TABLE IF NOT EXISTS expenses (id INTEGER PRIMARY KEY AUTOINCREMENT, amount REAL, category_id INTEGER, note TEXT, created_at INTEGER, updated_at INTEGER);');tx.executeSql('INSERT OR IGNORE INTO categories (id,name,color) VALUES (1,"Food", "#F59E0B"),(2,"Transport","#3B82F6"),(3,"Shopping","#10B981"),(4,"Bills","#EF4444"),(5,"Other","#6B7280");');});}
-export const database={getDB:()=>db};
+
+const db = SQLite.openDatabase('expenses.db');
+
+export function init() {
+    db.transaction(tx => {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, color TEXT);');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS expenses (id INTEGER PRIMARY KEY AUTOINCREMENT, amount REAL, category_id INTEGER, note TEXT, created_at INTEGER, updated_at INTEGER);');
+        tx.executeSql('INSERT OR IGNORE INTO categories (id,name,color) VALUES (1,"Food", "#F59E0B"),(2,"Transport","#3B82F6"),(3,"Shopping","#10B981"),(4,"Bills","#EF4444"),(5,"Other","#6B7280");');
+    });
+}
+
+export const database = { 
+    getDB: () => db
+};
